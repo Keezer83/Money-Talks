@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "./ExpenseInput.css";
 
-export const ExpenseInput = ({ onSubmit }) => {
+export const ExpenseInput = ({ onClick }) => {
   const [newWhat, setNewWhat] = useState("");
   const [newWhere, setNewWhere] = useState("");
   const [newWhen, setNewWhen] = useState("");
@@ -17,7 +17,7 @@ export const ExpenseInput = ({ onSubmit }) => {
     ) {
       return;
     }
-    onSubmit(newWhat, newWhere, newWhen, newHowMuch);
+    onClick(newWhat, newWhere, newWhen, newHowMuch);
     setNewWhat("");
     setNewWhere("");
     setNewWhen("");
@@ -25,7 +25,7 @@ export const ExpenseInput = ({ onSubmit }) => {
   };
 
   return (
-    <form className="expenseEntry" onSubmit={handleAddExpense}>
+    <form className="expenseEntry">
       <input
         type="date"
         className="expenseInputs"
@@ -58,7 +58,9 @@ export const ExpenseInput = ({ onSubmit }) => {
         value={newWhere}
         onChange={(e) => setNewWhere(e.target.value)}
       />
-      <button type="submit">Add Expense</button>
+      <button type="submit" onClick={handleAddExpense}>
+        Add Expense
+      </button>
     </form>
   );
 };

@@ -35,7 +35,7 @@ const App = () => {
     <div className="App">
       <Header />
       <div className="expenseEntry">
-        <ExpenseInput onSubmit={addExpense} />
+        <ExpenseInput onClick={addExpense} />
       </div>
       <ExpenseTable
         expenses={expenses}
