@@ -1,0 +1,23 @@
+.expenseEntry {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+button {
+  width: 150px;
+  height: 25px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  background: #009879;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
