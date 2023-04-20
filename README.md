@@ -6,7 +6,7 @@ _Where did the money go? Just have a look at your expenses and you will know... 
 
 <br>
 
-a simple no nonsense app for tracking expenses [here]()
+a simple no nonsense app for tracking expenses [here](https://keezer-money-talks.netlify.app/)
 
 <image src="Expense-app-image.png">
 

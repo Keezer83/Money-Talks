@@ -1,14 +1,20 @@
+// Import necessary libraries and components
 import { React, useState } from "react";
 import "./ExpenseInput.css";
 
+// Defining a functional component called ExpenseInput which receives onClick function as props
 export const ExpenseInput = ({ onClick }) => {
+  // Declaring four different state variables using useState hook to store input field values
   const [newWhat, setNewWhat] = useState("");
   const [newWhere, setNewWhere] = useState("");
   const [newWhen, setNewWhen] = useState("");
   const [newHowMuch, setNewHowMuch] = useState("");
 
+  // A function that is executed when the submit button is clicked
   const handleAddExpense = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Preventing default form submission behavior
+
+    // Validating if any of the input fields are empty and if so, returning without performing any actions
     if (
       newWhat === "" ||
       newWhere === "" ||
@@ -17,13 +23,18 @@ export const ExpenseInput = ({ onClick }) => {
     ) {
       return;
     }
+
+    // Executing the onClick function passed as a prop along with the current state values of the input fields
     onClick(newWhat, newWhere, newWhen, newHowMuch);
+
+    // Clearing the input fields after submitting the data
     setNewWhat("");
     setNewWhere("");
     setNewWhen("");
     setNewHowMuch("");
   };
 
+  // Returning JSX with a form containing input fields and a submit button
   return (
     <form className="expenseEntry">
       <input
@@ -65,4 +76,5 @@ export const ExpenseInput = ({ onClick }) => {
   );
 };
 
+// Exporting the ExpenseInput component as default
 export default ExpenseInput;

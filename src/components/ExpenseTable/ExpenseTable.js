@@ -1,7 +1,9 @@
+// Import necessary libraries and components
 import { React } from "react";
 import "./ExpenseTable.css";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 
+// define a functional component `ExpenseTable` that accepts props `expenses`, `addExpense`, and `deleteExpense`
 const ExpenseTable = ({ expenses, addExpense, deleteExpense }) => {
   return (
     <div className="wrap">
@@ -16,13 +18,14 @@ const ExpenseTable = ({ expenses, addExpense, deleteExpense }) => {
           </tr>
         </thead>
         <tbody className="expenseItem">
+          {/* map over the `expenses` array and return an `ExpenseItem` component for each expense */}
           {expenses.map((expense) => {
             return (
               <ExpenseItem
-                {...expense}
-                key={expense.id}
-                addExpense={addExpense}
-                deleteExpense={deleteExpense}
+                {...expense} // pass all properties of the `expense` object as props to the `ExpenseItem` component
+                key={expense.id} // use `id` property of the `expense` object as the `key` prop of the `ExpenseItem` component
+                addExpense={addExpense} // pass the `addExpense` function as a prop to the `ExpenseItem` component
+                deleteExpense={deleteExpense} // pass the `deleteExpense` function as a prop to the `ExpenseItem` component
               />
             );
           })}
