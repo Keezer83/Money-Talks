@@ -3,7 +3,7 @@ import { React, useState } from "react";
 import "./ExpenseInput.css";
 
 // Defining a functional component called ExpenseInput which receives onClick function as props
-export const ExpenseInput = ({ onClick }) => {
+const ExpenseInput = ({ onClick }) => {
   // Declaring four different state variables using useState hook to store input field values
   const [newWhat, setNewWhat] = useState("");
   const [newWhere, setNewWhere] = useState("");
