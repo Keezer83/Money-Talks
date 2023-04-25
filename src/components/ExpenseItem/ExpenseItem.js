@@ -2,17 +2,17 @@
 import { React } from "react";
 
 // Define a functional component named ExpenseItem with props
-const ExpenseItem = ({ when, where, what, howMuch, id, deleteExpense }) => {
+const ExpenseItem = (props) => {
   // Return a table row with cells containing the expense data
   return (
     <tr>
-      <td>{when}</td>
-      <td>{what}</td>
-      <td>{howMuch}</td>
-      <td>{where}</td>
+      <td>{props.when}</td>
+      <td>{props.what}</td>
+      <td>{props.howMuch}</td>
+      <td>{props.where}</td>
       <td>
         {/* Button with "Delete" text and onClick event handler */}
-        <button onClick={() => deleteExpense(id)}>Delete</button>
+        <button onClick={() => props.deleteExpense(props.id)}>Delete</button>
       </td>
     </tr>
   );

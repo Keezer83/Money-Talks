@@ -3,7 +3,7 @@ import { React, useState } from "react";
 import "./ExpenseInput.css";
 
 // Defining a functional component called ExpenseInput which receives onClick function as props
-const ExpenseInput = ({ onClick }) => {
+const ExpenseInput = (props) => {
   // Declaring four different state variables using useState hook to store input field values
   const [newWhat, setNewWhat] = useState("");
   const [newWhere, setNewWhere] = useState("");
@@ -25,7 +25,7 @@ const ExpenseInput = ({ onClick }) => {
     }
 
     // Executing the onClick function passed as a prop along with the current state values of the input fields
-    onClick(newWhat, newWhere, newWhen, newHowMuch);
+    props.onClick(newWhat, newWhere, newWhen, newHowMuch);
 
     // Clearing the input fields after submitting the data
     setNewWhat("");
